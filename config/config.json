@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "00000000",
+    "database": "pest_app",
+    "host": "database-1.cynr3skzai4u.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "00000000",
+    "database": "pest_app",
+    "host": "database-1.cynr3skzai4u.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "00000000",
+    "database": "pest_app",
+    "host": "database-1.cynr3skzai4u.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}
