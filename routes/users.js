@@ -159,19 +159,52 @@ router.post("/findpw", (req, res, next) => {
     });
 });
 
+
+// 비밀번호 변경
+router.put("/changepw", (req, res, next) => {
+
+  models.User.update(
+    {
+      password: req.body.password,
+    },
+    {
+      where: { id: req.body.id },
+    }
+  )
+    .then((result) => {
+      res.status(200).send({
+        message: "변경성공!",
+        status: true,
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "변경 api 오류",
+        status: false
+
+      });
+    });
+});
+
 //회원 삭제
 router.delete("/delete", (req, res, next) => {
   models.User.destroy({
     where: { id: req.body.id },
   })
     .then((result) => {
-      console.log(result);
-      res.status(200).json(result);
+      res.status(200).send({
+        message: "삭제성공!",
+        status: true,
+      });
     })
     .catch((err) => {
-      console.error(err);
-      next(err);
+      res.status(500).send({
+        message: "삭제 api 오류",
+        status: false
+
+      });
     });
 });
+
 
 module.exports = router;
