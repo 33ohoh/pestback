@@ -12,6 +12,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize,Sequelize);
-db.Month_Pest = require('./monthly_pest')(sequelize,Sequelize);
+db.MonthPest = require('./monthlypest')(sequelize,Sequelize);
 
 module.exports = db;

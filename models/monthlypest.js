@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('monthly_pest', {
+  return sequelize.define('monthlypest', {
     month: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'monthly_pest',
+    tableName: 'monthlypest',
     timestamps: false,
     indexes: [
       {

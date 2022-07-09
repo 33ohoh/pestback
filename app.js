@@ -27,7 +27,7 @@ sequelize
 
   
 app.use("/users", require("./routes/users")); // 유저
-app.use("/monthly_pests", require("./routes/monthly_pests")); // 달마다의 해충
+app.use("/monthlypests", require("./routes/monthlypests")); // 달마다의 해충
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname +"/address.html");
