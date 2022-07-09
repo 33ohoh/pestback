@@ -39,6 +39,7 @@ router.post("/login", async (req, res, next) => {
         if (inputPassword == dbPassword) {
           return res.status(200).json({
             message: "로그인 성공",
+            id: inputId,
             status: true,
           });
         } else {
@@ -158,6 +159,19 @@ router.post("/findpw", (req, res, next) => {
     });
 });
 
-
+//회원 삭제
+router.delete("/delete", (req, res, next) => {
+  models.User.destroy({
+    where: { id: req.body.id },
+  })
+    .then((result) => {
+      console.log(result);
+      res.status(200).json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      next(err);
+    });
+});
 
 module.exports = router;
