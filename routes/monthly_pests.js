@@ -20,7 +20,7 @@ router.get('/month', (req,res,next)=>{
         })
         .catch((err)=>{
             console.log(err);
-            res.status(500).send({
+            res.status(200).send({
               message: "달마다의 해충 서버 오류",
               status: false,
               err
