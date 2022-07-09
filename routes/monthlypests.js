@@ -3,14 +3,13 @@ const router = express.Router();
 const models = require("../models");
 
 
-
 // 입력한 달에 해당되는 해충들 정보 리턴
-router.get('/month', (req,res,next)=>{
+router.post('/month', async(req,res,next)=>{
     models.MonthPest.findAll({
 
         where :{
             month: req.body.month
-        }
+        },
     })
         .then((pests)=>{
             return res.status(200).json({
