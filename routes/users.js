@@ -187,7 +187,7 @@ router.put("/changepw", (req, res, next) => {
 });
 
 //회원 삭제
-router.post("/delete", (req, res, next) => {
+router.destroy("/delete", (req, res, next) => {
   models.User.destroy({
     where: { id: req.body.id },
   })

@@ -15,11 +15,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     latitude: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.DOUBLE,
       allowNull: false
     },
     longitude: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.DOUBLE,
       allowNull: false
     },
     product_name: {
