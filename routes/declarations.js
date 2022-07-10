@@ -18,5 +18,30 @@ router.get("/data", (req, res, next) => {
             status: false,
           });
       });
-  });
+});
+router.post("/report", async (req, res) => {
+    const userInfo = {
+      id: req.body.id,
+      street_address: req.body.street_address,
+      detailed_address: req.body.detailed_address,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+      product_name: req.body.product_name,
+      pest_name: req.body.pest_name,
+      image_url: req.body.image_url,
+      details: req.body.details,
+    };
+  
+    models.Declaration.create(userInfo)
+      .then((result) => {
+        res.status(200).json(result);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).send({
+          result: false,
+          message: "회원가입하는데 오류가 발생하였습니다.",
+        });
+      });
+});
 module.exports = router;

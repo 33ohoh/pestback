@@ -26,7 +26,6 @@ router.post('/month', async(req,res,next)=>{
             });
         })
 });
-
   
 
 
