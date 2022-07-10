@@ -19,6 +19,34 @@ router.get("/data", (req, res, next) => {
           });
       });
 });
+
+
+// 로그인한 아이디의 신고내역
+router.post('/report', async(req,res,next)=>{
+    models.Declaration.findAll({
+
+        where :{
+            id: req.body.id
+        },
+    })
+        .then((result)=>{
+            return res.status(200).json({
+                result,
+                status: true,
+              });
+        })
+        .catch((err)=>{
+            console.log(err);
+            res.status(200).send({
+              message: "사용자의 신고내역 서버 오류",
+              status: false,
+              err
+            });
+        })
+});
+
+  
+// 신고내용 서버에 전송
 router.post("/report", async (req, res) => {
     const userInfo = {
       id: req.body.id,
@@ -40,7 +68,7 @@ router.post("/report", async (req, res) => {
       .then((result) => {
         res.status(200).send({
             status: true,
-            
+
           });
       })
       .catch((err) => {
@@ -51,4 +79,6 @@ router.post("/report", async (req, res) => {
         });
       });
 });
+
+
 module.exports = router;
