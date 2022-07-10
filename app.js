@@ -42,9 +42,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname +"/daum_address.html");
 });
 
-app.get("/33ohoh", (req, res) => {
-  res.sendFile(__dirname +"/download.html");
-});
+
 
 app.listen(3000, () => {
     console.log("Express App on port 3000!");
