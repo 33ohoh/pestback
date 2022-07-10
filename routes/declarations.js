@@ -48,7 +48,7 @@ router.post('/report', async(req,res,next)=>{
 
   
 // 신고내용 서버에 전송
-router.post("/report", async (req, res) => {
+router.post("/reportadd", async (req, res) => {
     const userInfo = {
       id: req.body.id,
       street_address: req.body.street_address,
