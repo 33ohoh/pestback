@@ -28,6 +28,7 @@ sequelize
   
 app.use("/users", require("./routes/users")); // 유저
 app.use("/monthlypests", require("./routes/monthlypests")); // 달마다의 해충
+app.use("/declarations", require("./routes/declarations")); // 신고
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname +"/daum_address.html");
