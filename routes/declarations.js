@@ -27,6 +27,7 @@ router.post("/report", async (req, res) => {
       latitude: req.body.latitude,
       longitude: req.body.longitude,
       product_name: req.body.product_name,
+      symptom: req.body.symptom,
       pest_name: req.body.pest_name,
       image_url: req.body.image_url,
       details: req.body.details,
