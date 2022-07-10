@@ -28,15 +28,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     symptom: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: true
     },
     pest_name: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: true
     },
     image_url: {
-      type: DataTypes.BLOB('long'),
-      allowNull: false
+      type: DataTypes.BLOB,
+      allowNull: true
     },
     details: {
       type: DataTypes.STRING(200),
