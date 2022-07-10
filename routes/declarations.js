@@ -31,6 +31,9 @@ router.post("/report", async (req, res) => {
       pest_name: req.body.pest_name,
       image_url: req.body.image_url,
       details: req.body.details,
+      date: req.body.date,
+      title: req.body.title
+
     };
   
     models.Declaration.create(userInfo)
