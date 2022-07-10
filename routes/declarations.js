@@ -35,13 +35,16 @@ router.post("/report", async (req, res) => {
   
     models.Declaration.create(userInfo)
       .then((result) => {
-        res.status(200).json(result);
+        res.status(200).send({
+            status: true,
+            
+          });
       })
       .catch((err) => {
         console.log(err);
         res.status(500).send({
           result: false,
-          message: "회원가입하는데 오류가 발생하였습니다.",
+         
         });
       });
 });
