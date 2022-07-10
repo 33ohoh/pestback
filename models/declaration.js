@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     detailed_address: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: true
     },
     latitude: {
       type: DataTypes.DOUBLE,
@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     image_url: {
-      type: DataTypes.BLOB('long'),
+      type: DataTypes.BLOB,
       allowNull: true
     },
     details: {

@@ -62,7 +62,6 @@ router.post("/report/add", async (req, res) => {
       details: req.body.details,
       date: req.body.date,
       title: req.body.title
-
     };
   
     models.Declaration.create(userInfo)
