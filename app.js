@@ -25,6 +25,14 @@ sequelize
     console.error(err);
   });
 
+  app.use(express.json({
+    limit: '5mb'
+  }))
+  app.use(express.urlencoded({
+    limit: '5mb',
+    extended: false
+  }))
+
   
 app.use("/users", require("./routes/users")); // 유저
 app.use("/monthlypests", require("./routes/monthlypests")); // 달마다의 해충
