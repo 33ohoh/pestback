@@ -26,10 +26,10 @@ sequelize
   });
 
   app.use(express.json({
-    limit: '50mb'
+    limit: '5mb'
   }))
   app.use(express.urlencoded({
-    limit: '50mb',
+    limit: '5mb',
     extended: false
   }))
 

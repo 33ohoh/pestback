@@ -2,13 +2,7 @@ const express = require("express");
 const router = express.Router();
 const models = require("../models");
 
-express.use(express.json({
-    limit: '50mb'
-  }))
-express.use(express.urlencoded({
-    limit: '50mb',
-    extended: false
-  }))
+
 
 // 신고 정보 전부 리턴
 router.get("/data", (req, res, next) => {
