@@ -49,6 +49,11 @@ module.exports = function(sequelize, DataTypes) {
     date: {
       type: DataTypes.STRING(45),
       allowNull: false
+    },
+    whether_to_solve: {
+      type: DataTypes.TINYINT,
+      allowNull: true,
+      defaultValue: 0
     }
   }, {
     sequelize,
