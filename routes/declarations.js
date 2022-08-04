@@ -80,5 +80,36 @@ router.post("/report/add", async (req, res) => {
       });
 });
 
+//병해충 해결완료 표시(db에서 not null인 컬럼 값을 조건으로 받음)
+router.put("/changewhethertosolve", (req, res, next) => {
+
+  models.Declaration.update(
+    {
+      whether_to_solve: "1",
+    },
+    {
+      where: { 
+        id: req.body.id,
+        product_name: req.body.product_name,
+        title: req.body.title,
+        details: req.body.details,
+        date: req.body.date,
+      },
+    }
+  )
+    .then((result) => {
+      res.status(200).send({
+        message: "변경성공!",
+        status: true,
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "변경 api 오류",
+        status: false
+
+      });
+    });
+});
 
 module.exports = router;
