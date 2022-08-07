@@ -112,4 +112,33 @@ router.put("/changewhethertosolve", (req, res, next) => {
     });
 });
 
+//해결 완료 여부
+router.post('/whethertosolve', async(req,res,next)=>{
+  models.Declaration.findAll({
+
+      where :{
+          id: req.body.id,
+          product_name: req.body.product_name,
+          symptom: req.body.symptom,
+          pest_name: req.body.pest_name,
+          details: req.body.details,
+          date: req.body.date,
+          title: req.body.title
+      },
+  })
+      .then((result)=>{
+          return res.status(200).json({
+              result,
+              status: true,
+            });
+      })
+      .catch((err)=>{
+          console.log(err);
+          res.status(200).send({
+            message: "사용자의 신고내역 서버 오류",
+            status: false,
+            err
+          });
+      })
+});
 module.exports = router;
